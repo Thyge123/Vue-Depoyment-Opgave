@@ -51,11 +51,6 @@ li {
   padding: 8px 12px;
 }
 
-.team-name {
-  font-weight: bold;
-  font-size: larger;
-}
-
 ul {
   padding: 0;
 }

@@ -67,7 +67,7 @@ ul {
   flex-direction: row;
   gap: 1rem;
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 li {

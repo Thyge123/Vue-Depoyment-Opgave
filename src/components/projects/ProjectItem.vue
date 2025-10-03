@@ -52,10 +52,18 @@ export default {
 </script>
 <style scoped>
 section {
-  margin: 2rem auto;
+  margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
   border-radius: 12px;
-  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 20%;
+  min-width: 20rem;
+}
+
+.team-name {
+  font-weight: bold;
+  font-size: larger;
 }
 </style>

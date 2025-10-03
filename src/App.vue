@@ -33,6 +33,7 @@ export default {
         { id: 'p1', name: 'Project 1', teamId: 't1' },
         { id: 'p2', name: 'Project 2', teamId: 't2' },
         { id: 'p3', name: 'Project 3', teamId: 't3' },
+        { id: 'p4', name: 'Project 4', teamId: 't1' },
       ],
     };
   },

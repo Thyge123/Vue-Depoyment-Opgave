@@ -79,6 +79,7 @@ section {
 button {
   margin-top: 1rem;
   padding: 0.5rem 1.5rem;
+  padding-left: 1rem;
   border-radius: 8px;
   background-color: #11005c;
   color: white;

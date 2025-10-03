@@ -6,8 +6,8 @@
         v-for="project in projects"
         :key="project.id"
         :name="project.name"
-        :project-id="project.id"
         :team-id="project.teamId"
+        :project-id="project.id"
         :team-details-visible="selectedProjectId === project.id"
         @toggle-team-details="selectTeam"
       ></project-item>
@@ -28,11 +28,31 @@ export default {
       selectedProjectId: null,
     };
   },
+  watch: {
+    '$route.params.projectId'(newId) {
+      this.selectedProjectId = newId || null;
+    },
+  },
   methods: {
     selectTeam(projectId) {
-      this.selectedProjectId =
+      const newSelectedProjectId =
         this.selectedProjectId === projectId ? null : projectId;
+      this.selectedProjectId = newSelectedProjectId;
+      if (newSelectedProjectId) {
+        this.$router.push({
+          name: 'project-members',
+          params: { projectId: newSelectedProjectId },
+        });
+      } else {
+        this.$router.push({ name: 'projects' });
+      }
     },
+  },
+  created() {
+    const projectId = this.$route.params.projectId;
+    if (projectId) {
+      this.selectedProjectId = projectId;
+    }
   },
 };
 </script>

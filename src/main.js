@@ -10,6 +10,7 @@ import TeamsFooter from './components/teams/TeamsFooter.vue';
 import UsersFooter from './components/users/UsersFooter.vue';
 import ProjectList from './components/projects/ProjectList.vue';
 import ProjectsFooter from './components/projects/ProjectsFooter.vue';
+import ProjectMembers from './components/projects/ProjectMembers.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -42,12 +43,19 @@ const router = createRouter({
         default: ProjectList,
         footer: ProjectsFooter,
       },
+      children: [
+        {
+          name: 'project-members',
+          path: ':projectId',
+          component: ProjectMembers,
+          props: true,
+        },
+      ],
     },
     { path: '/:notFound(.*)', component: NotFound },
   ],
   linkActiveClass: 'active',
   scrollBehavior(to, from, savedPosition) {
-    console.log(to, from, savedPosition);
     if (savedPosition) {
       return savedPosition;
     }
